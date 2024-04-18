@@ -7,6 +7,7 @@ import Layout from './components/Layout.jsx'
 import About from './components/AboutUs.jsx'
 import Contacts from './components/Contacts.jsx'
 import Login from './components/Login.jsx'
+import GetAll from './components/Applications/GetAll.jsx'
 
 const router = createBrowserRouter([
   {
@@ -20,6 +21,10 @@ const router = createBrowserRouter([
       {
         path: "contacts",
         element: <Contacts />
+      },
+      {
+        path: "get-all-applications",
+        element: <GetAll />
       },
       
     ]

@@ -3,7 +3,7 @@ import React from 'react'
 function Footer() {
   return (
     <>
-      <div className='w-[99vw] h-[32vw] sm:h-[25vw] mt-[2vw] bg-slate-900 flex justify-evenly items-center' >
+      <div className='w-[100%] h-[32vw] sm:h-[25vw] mt-[2vw] bg-slate-900 flex justify-evenly items-center' >
 
         <div className='w-[30vw] h-[18vw]  flex flex-col  items-center'>
           <img src="/temp/IIITLogo.png" alt="" className='w-[10vw]' />
@@ -28,7 +28,7 @@ function Footer() {
 
       </div>
 
-      <div className='w-[99vw] h-[3vw] bg-gray-800 text-white flex items-center justify-center'>All Rights Reserved to @Sanskar</div>
+      <div className='w-[100%] h-[3vw] bg-gray-800 text-white flex items-center justify-center'>All Rights Reserved to @Sanskar</div>
     </>
   )
 }

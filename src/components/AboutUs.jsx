@@ -6,7 +6,7 @@ function About() {
   return (
     <>
     {/* here div of massive college image and a paragraph on the college*/}
-      <div className='mt-[1vw] p-0 w-[99vw] flex flex-col items-center relative'>
+      <div className='mt-[1vw] p-0 w-[100%] flex flex-col items-center relative'>
         <img src="/temp/IIITU.jpg" alt="" className='w-[99vw] border border-none ' />
         <div className='w-[99vw] h-[53.5vw] bg-black opacity-40 absolute top-0'></div>
 
