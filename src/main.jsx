@@ -3,11 +3,16 @@ import ReactDOM from 'react-dom/client'
 import App from './App.jsx'
 import './index.css'
 import { RouterProvider, createBrowserRouter } from 'react-router-dom'
-import Layout from './components/Layout.jsx'
-import About from './components/AboutUs.jsx'
-import Contacts from './components/Contacts.jsx'
-import Login from './components/Login.jsx'
-import GetAll from './components/Applications/GetAll.jsx'
+import Layout from './components/utils/Layout.jsx'
+import About from './components/utils/AboutUs.jsx'
+import Contacts from './components/utils/Contacts.jsx'
+import LoginStu from './components/Student/LoginStu.jsx'
+import GetApplication from './components/Applications/GetAll.jsx'
+import Logout from './components/Student/Logout.jsx'
+import GetMy from './components/Applications/GetMy.jsx'
+
+import Register from './components/Student/Register.jsx'
+import WriteApplication from './components/Applications/write.jsx'
 
 const router = createBrowserRouter([
   {
@@ -15,25 +20,41 @@ const router = createBrowserRouter([
     element: <Layout />,
     children: [
       {
-        path: "about",
+        path: "/about",
         element: <About />
       },
       {
-        path: "contacts",
+        path: "/contacts",
         element: <Contacts />
       },
+
       {
-        path: "get-all-applications",
-        element: <GetAll />
+        path: "/get-all-applications",
+        element: <GetApplication />
       },
-      
+      {
+        path: "/get-my-applications",
+        element: <GetMy />,
+      },  
+      {
+        path: "/write",
+        element: <WriteApplication />
+      } 
     ]
   },
   {
+    path: "/register",
+    element: <Register />
+  },
+  {
     
-    path: "login",
-    element: <Login />
+    path: "/login",
+    element: <LoginStu />
     
+  },
+  {
+    path:"/logout",
+    element: <Logout />
   }
 ])
 

@@ -3,7 +3,7 @@ import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import Cookies from 'js-cookie';
 
-function Login() {
+function LoginStu() {
 
     const navigate = useNavigate();
     const refEmail = React.useRef();
@@ -16,6 +16,9 @@ function Login() {
 
         const email = refEmail.current.value;
         const password = refPhone.current.value;
+        
+        console.log(email, password);
+
         callBackend(email, password);
     }
 
@@ -26,9 +29,13 @@ function Login() {
                 password: password
             })
             if (response.status === 200) {
-                console.log(response)
-                const accessToken = Cookies.get('accessToken');
-                console.log("access token is " , accessToken)
+                console.log(response.data.data)
+                const accessToken = response.data.data.accessToken;
+                const refreshToken = response.data.data.refreshToken;
+                
+                localStorage.setItem('accessToken', accessToken);
+                localStorage.setItem('refreshToken', refreshToken);
+                
                 navigate("/");
             }
         } catch (error) {
@@ -82,4 +89,4 @@ function Login() {
     )
 }
 
-export default Login
+export default LoginStu;

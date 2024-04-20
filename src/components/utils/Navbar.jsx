@@ -5,7 +5,7 @@ export const Navbar = (prop) => {
     return (
         <>
 
-            <nav className="bg-white border border-none w-[100%] h-[18.5vw] sm:h-[12.5vw] relative overflow-hidden" >
+            <nav className="bg-white border border-none w-[100%] h-[18.5vw] mb-4 sm:h-[12.5vw] relative overflow-hidden" >
                 <img src="/temp/head.svg" alt="" className="w-[100%] absolute hidden sm:block -top-[2vw] -z-1" />
                 <img src="/temp/1logo-una.png" alt="" className="w-[48%] mt-[2.5vw] ml-[2%] hidden sm:block" />
 
@@ -28,7 +28,7 @@ export const Navbar = (prop) => {
                 </ul>
 
                 <ul className="sm:w-[45vw] md:w-[40vw]  mr-[2vw] hidden sm:absolute bottom-0 right-0 sm:flex justify-evenly ">
-                    <li className="text-xs lg:text-base md:text-sm cursor-pointer text-rgba-brown font-semibold font-sans">Application</li>
+                    <Link to="/get-my-applications" className="text-xs lg:text-base md:text-sm cursor-pointer text-rgba-brown font-semibold font-sans">Application</Link>
                     <div className="border-l border-gray-900 h-auto "></div>
                     <li className="text-xs lg:text-base md:text-sm cursor-pointer text-rgba-brown font-semibold font-sans">Complaints</li>
                     <div className="border-l border-gray-900 h-auto"></div>
