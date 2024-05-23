@@ -7,18 +7,27 @@ import Layout from './components/utils/Layout.jsx'
 import About from './components/utils/AboutUs.jsx'
 import Contacts from './components/utils/Contacts.jsx'
 import LoginStu from './components/Student/LoginStu.jsx'
-import GetApplication from './components/Applications/GetAll.jsx'
 import Logout from './components/Student/Logout.jsx'
 import GetMy from './components/Applications/GetMy.jsx'
+import WriteComplaint from './components/Complaints/write.jsx'
+import GetMyComplaints from './components/Complaints/Get.jsx'
 
-import Register from './components/Student/Register.jsx'
 import WriteApplication from './components/Applications/write.jsx'
+import Register from './components/Registration/Register.jsx'
+import Course from './components/Registration/Course.jsx'
+import Hostel from './components/Registration/Hostel.jsx'
+import Profile from './components/Student/Profile.jsx'
+import Home from './components/Home/main.jsx'
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Layout />,
     children: [
+      {
+        path: "/",
+        element: <Home />
+      },
       {
         path: "/about",
         element: <About />
@@ -27,33 +36,49 @@ const router = createBrowserRouter([
         path: "/contacts",
         element: <Contacts />
       },
-
       {
-        path: "/get-all-applications",
-        element: <GetApplication />
+        path: "/applications",
+        element: <GetMy />,
       },
       {
-        path: "/get-my-applications",
-        element: <GetMy />,
-      },  
-      {
-        path: "/write",
+        path: "/writeApplication",
         element: <WriteApplication />
-      } 
+      },
+      {
+        path: "/complaints",
+        element: <GetMyComplaints />,
+      },
+      {
+        path: "/writeComplaints",
+        element: <WriteComplaint />
+      },
+      {
+        path: "/registration",
+        element: <Register />,        
+      },
+      {
+        path: "/course",
+        element: <Course />
+      },
+      {
+        path: "/hostel",
+        element: <Hostel />
+      },{
+        path: "/profile",
+        element: <Profile/>
+      }
+      
     ]
   },
+
   {
-    path: "/register",
-    element: <Register />
-  },
-  {
-    
+
     path: "/login",
     element: <LoginStu />
-    
+
   },
   {
-    path:"/logout",
+    path: "/logout",
     element: <Logout />
   }
 ])

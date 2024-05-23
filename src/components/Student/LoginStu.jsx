@@ -17,7 +17,7 @@ function LoginStu() {
         const email = refEmail.current.value;
         const password = refPhone.current.value;
         
-        console.log(email, password);
+        // console.log(email, password);
 
         callBackend(email, password);
     }
@@ -29,17 +29,22 @@ function LoginStu() {
                 password: password
             })
             if (response.status === 200) {
-                console.log(response.data.data)
+                // console.log(response.data.data,"---------->", response.status)
                 const accessToken = response.data.data.accessToken;
                 const refreshToken = response.data.data.refreshToken;
+                const studentId = response.data.data.student._id;
                 
+                // console.log('id is -=======->',response.data.data.student._id)
                 localStorage.setItem('accessToken', accessToken);
                 localStorage.setItem('refreshToken', refreshToken);
+                localStorage.setItem('studentId', studentId);
+
                 
                 navigate("/");
             }
+           
         } catch (error) {
-            console.log(error)
+            alert("INVALID CREDENTIALS")
         }
     }
 

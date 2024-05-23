@@ -5,11 +5,12 @@ const Contacts = () => {
     return (
         <div>
 
-            <Cards imag={["IIITLogo.png", "IIITLogo.png", "IIITLogo.png"]} para={["This is Director", "This is Registrar", "This is Warden"]} />
+            <Cards imag={["IIITLogo.png", "IIITLogo.png", "IIITLogo.png"]} para={["This is Director of Indian Institute of Information Technology Una. He is appointed to serve this campus as director and do directorship. Now I ran out of words.", "This is Registrar", "This is Warden"]} head={["Director", "Registrar", "Warden"]} />
 
             <div className='flex justify-evenly'>
                 <div className="relative overflow-x-auto shadow-md sm:rounded-lg mt-[2vw] w-[96vw]">
-                    <table className="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+                    <span className='text-4xl font-bold border-b-4 border-b-black '>Some Important Contacts </span>
+                    <table className="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400 mt-[2%]">
                         <thead className="text-base text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                             <tr>
                                 <th scope="col" className="px-6 py-3">

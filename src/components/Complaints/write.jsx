@@ -2,7 +2,7 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 
-function WriteApplication() {
+function WriteComplaint() {
     const navigate = useNavigate();
 
     const accessToken = localStorage.getItem('accessToken');
@@ -20,7 +20,7 @@ function WriteApplication() {
         const fetchData = async () => {
             try {
                 const response = await axios.post(
-                    'http://localhost:8000/api/v1/application/write',
+                    'http://localhost:8000/api/v1/complaint/write',
                     {
                         content: content,
                         password: password,
@@ -34,9 +34,9 @@ function WriteApplication() {
                 );
                 console.log(response.status);
                 if(response.status === 200){
-                    navigate("/applications")
+                    navigate("/complaints")
                 } else{
-                    console.log("problem occured in sending the application to backend from frontend");
+                    console.log("problem occured in sending the complaint to backend from frontend");
                 }
                 // Update the state variable with the response data
                 // setMyApplications(response.data.data.myApplications);
@@ -89,4 +89,4 @@ function WriteApplication() {
     )
 }
 
-export default WriteApplication
+export default WriteComplaint

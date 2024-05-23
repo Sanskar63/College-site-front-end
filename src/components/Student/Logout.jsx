@@ -11,7 +11,7 @@ function Logout() {
     }
   return (
     <div className='flex justify-center items-center h-screen'>
-      <button className='border border-black' onClick={logout}>Logout</button>
+      <button className='border border-black px-10 py-3 bg-teal-400 font-bold ' onClick={logout}>Logout</button>
     </div>
   )
 }

@@ -3,7 +3,7 @@ import React from 'react'
 function Footer() {
   return (
     <>
-      <div className='w-[100%] h-[32vw] sm:h-[25vw] mt-[2vw] bg-slate-900 flex justify-evenly items-center' >
+      <div className='w-[100%] h-[32vw] sm:h-[25vw] bg-slate-900 flex justify-evenly items-center mt-5' >
 
         <div className='w-[30vw] h-[18vw]  flex flex-col  items-center'>
           <img src="/temp/IIITLogo.png" alt="" className='w-[10vw]' />

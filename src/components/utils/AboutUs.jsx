@@ -6,20 +6,19 @@ function About() {
   return (
     <>
     {/* here div of massive college image and a paragraph on the college*/}
-      <div className='mt-[1vw] p-0 w-[100%] flex flex-col items-center relative'>
+      <div className='p-0 w-[100%] flex flex-col items-center relative'>
         <img src="/temp/IIITU.jpg" alt="" className='w-[99vw] border border-none ' />
         <div className='w-[99vw] h-[53.5vw] bg-black opacity-40 absolute top-0'></div>
 
         <div className='w-[97vw] mt-[2vw]'>
             <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam quos sit, laudantium tempora doloribus corrupti ratione reprehenderit possimus, aliquam temporibus reiciendis accusantium sed eos porro expedita? Autem ea similique praesentium cupiditate perspiciatis voluptate, fuga quaerat numquam a, ratione quidem dignissimos. Repellendus natus quas harum dolores doloremque incidunt blanditiis magnam sequi! Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis officia debitis at, ut eaque tempore nostrum fugit voluptatibus officiis incidunt impedit? Error quia earum accusantium ducimus officiis, pariatur dicta impedit illum rerum suscipit repudiandae? Voluptate itaque suscipit tempora nulla? Repellendus tempore non necessitatibus delectus adipisci recusandae, ratione iste doloribus aperiam!
+            Indian Institute of Information Technology Una (IIIT, Una) is one of the Indian Institutes of Information Technology located at Vill. Saloh, Teh. Haroli, Distt. Una Himachal Pradesh-177209, Himachal Pradesh.. Established in 2014, it was recognized as an Institute of National Importance.IIIT Una is a joint venture of the Ministry of Human Resource Development, Government of India, the Govt. of Himachal Pradesh, with Industries in Public-Private Partnership model.The industries are H.P. Power Corporation and H.P. Power Transmission Corporation.
             </p>
         </div>
       </div>
 
       {/* here some cards inside marquee telling about the services and their uses */}
-      <Cards imag={["IIITU.jpg", "IIITU.jpg"]} para={["Hello its me and its my first prop para", "This is second Para"]}/>
-    </>
+      <Cards imag={["IIITLogo.png", "IIITLogo.png", "IIITLogo.png"]} para={["This is Director of Indian Institute of Information Technology Una. He is appointed to serve this campus as director and do directorship. Now I ran out of words.", "This is Registrar", "This is Warden"]} head={["", "", ""]} />    </>
   )
 }
 
