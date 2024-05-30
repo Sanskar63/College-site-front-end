@@ -1,22 +1,23 @@
 // src/ENCards.js
 import React from 'react';
 
-const ENCards = ({ image, heading, paragraph, date, link }) => {
+const ENCards = ({ img, heading, content, date, link }) => {
+  const createdAtDate = new Date(date);
+
+  const d = createdAtDate.toDateString(); // "Thu Apr 21 2024"
   return (
-    <div className="max-w-sm rounded overflow-hidden shadow-lg bg-white m-[1%]">
-      <img className="w-full" src={image} alt="News" />
-      <div className="px-6 py-4">
+    <div className="max-w-sm h-[35vw] rounded border shadow-lg m-[1%] bg-white relative ">
+      <div className="flex justify-between items-center h-[5%]">
+        <span className="text-gray-700 text-base absolute right-[2%]">{d}</span>
+      </div>
+      {img?<img className="h-[45%] w-[100%]" src={img} alt="News" />: ""}
+      <div className="px-6 py-4 overflow-y-scroll scrollbar-none hover:scrollbar-thin h-[49%]">
         <div className="font-bold text-xl mb-2">{heading}</div>
         <p className="text-gray-700 text-base">
-          {paragraph}
+          {content}
         </p>
       </div>
-      <div className="px-6 pt-4 pb-2 flex justify-between items-center">
-        <span className="text-gray-500 text-sm">{date}</span>
-        <a href={link} className="inline-block bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-          Read More
-        </a>
-      </div>
+      
     </div>
   );
 };

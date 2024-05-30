@@ -1,3 +1,46 @@
+/* src/index.css or any global CSS file */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Custom scrollbar styles */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 12px; /* Adjust the width of the scrollbar */
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: #888; /* Change the color of the scrollbar thumb */
+  border-radius: 10px; /* Make it rounded */
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background-color: #555; /* Change color on hover */
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background-color: #f1f1f1; /* Change the track color */
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
+/* Show scrollbar on hover */
+.scrollbar-hide:hover::-webkit-scrollbar {
+  width: 12px; /* Adjust the width as needed */
+  height: 12px; /* Adjust the height as needed */
+}
+
+.scrollbar-hide::-webkit-scrollbar-thumb {
+  background-color: #888; /* Change the color of the scrollbar thumb */
+  border-radius: 10px; /* Make it rounded */
+}
+
+.scrollbar-hide:hover::-webkit-scrollbar-thumb {
+  background-color: #555; /* Change color on hover */
+}
+
+.scrollbar-hide::-webkit-scrollbar-track {
+  background-color: #f1f1f1; /* Change the track color */
+}

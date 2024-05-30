@@ -4,7 +4,7 @@ import App from './App.jsx'
 import './index.css'
 import { RouterProvider, createBrowserRouter } from 'react-router-dom'
 import Layout from './components/utils/Layout.jsx'
-import About from './components/utils/AboutUs.jsx'
+import Announcement from './components/utils/Announcement.jsx'
 import Contacts from './components/utils/Contacts.jsx'
 import LoginStu from './components/Student/LoginStu.jsx'
 import Logout from './components/Student/Logout.jsx'
@@ -18,6 +18,8 @@ import Course from './components/Registration/Course.jsx'
 import Hostel from './components/Registration/Hostel.jsx'
 import Profile from './components/Student/Profile.jsx'
 import Home from './components/Home/main.jsx'
+import AllEvents from './components/NewsAndEvents/AllEvents.jsx'
+import AllNews from './components/NewsAndEvents/AllNews.jsx'
 
 const router = createBrowserRouter([
   {
@@ -29,8 +31,8 @@ const router = createBrowserRouter([
         element: <Home />
       },
       {
-        path: "/about",
-        element: <About />
+        path: "/announcement",
+        element: <Announcement />
       },
       {
         path: "/contacts",
@@ -66,6 +68,14 @@ const router = createBrowserRouter([
       },{
         path: "/profile",
         element: <Profile/>
+      },
+      {
+        path: "/all-news",
+        element: <AllNews />
+      },
+      {
+        path: "/all-events",
+        element: <AllEvents />
       }
       
     ]
