@@ -40,9 +40,9 @@ export const Navbar = (prop) => {
                 <img src="/temp/1logo-una.png" alt="" className="w-[48%] mt-[2.5vw] ml-[2%] hidden sm:block" />
 
                 {/* now is navbar for small width devices */}
-                <div className="h-[73%] relative block sm:hidden">
-                    <div className="w-[100%] h-[50%] sm:hidden absolute top-0 right-0 overflow-visible flex justify-center items-center bg-rgba-brown">
-                        <div className="w-[55%] mt-[7vw] bg-white border border-none rounded-lg">
+                <div className="h-[30vw] relative block sm:hidden">
+                    <div className="w-[100%] h-[40%] sm:hidden absolute top-0 right-0 overflow-visible flex justify-center items-center bg-rgba-brown">
+                        <div className="w-[70%] mt-[7vw] bg-white border border-none rounded-lg">
                             <img src="/temp/1logo-una.png" alt="" className="w-[98%] ml-[2%] block sm:hidden " />
                         </div>
                     </div>
