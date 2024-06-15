@@ -9,9 +9,9 @@ export const Navbar = (prop) => {
     const [imageUrl, setImageUrl] = useState("");
 
     const getInfo = async (student) => {
-        console.log("=============Running============")
+        // console.log("=============Running============");
         try {
-            const response = await axios.get(`http://localhost:8000/api/v1/regis/getStudent/${student}`, {
+            const response = await axios.get(`${url}/regis/getStudent/${student}`, {
                 headers: {
                     'Authorization': `Bearer ${accessToken}`,
                     'Content-Type': 'application/json'
