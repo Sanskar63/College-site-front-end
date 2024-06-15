@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import Cookies from 'js-cookie';
+import { url } from '../utils/constant';
 
 function LoginStu() {
 
@@ -24,7 +25,7 @@ function LoginStu() {
 
     const callBackend = async (email, password) => {
         try {
-            const response = await axios.post("http://localhost:8000/api/v1/regis/login", {
+            const response = await axios.post(`${url}/v1/regis/login`, {
                 email: email,
                 password: password
             })

@@ -39,7 +39,7 @@ function Announcement() {
 
         setAnnouncements(weeklyAnnouncements);
         setAll(allAnnouncements);
-        setTimeout(() => setLoading(false), 3000);   // *************************************just to check Shimmer Effect
+        setLoading(false);
       } catch (error) {
         console.error('Error fetching Announcements:', error);
       }

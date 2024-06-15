@@ -5,7 +5,7 @@ const Contacts = () => {
     return (
         <div>
 
-            <Cards imag={["IIITLogo.png", "IIITLogo.png", "IIITLogo.png"]} para={["This is Director of Indian Institute of Information Technology Una. He is appointed to serve this campus as director and do directorship. Now I ran out of words.", "This is Registrar", "This is Warden"]} head={["Director", "Registrar", "Warden"]} />
+            <Cards imag={["IIITLogo.png", "IIITLogo.png", "IIITLogo.png"]} para={["Director,Indian Institute of Information Technology Una Una-177209, HP Email: director@iiitu.ac.in", "This is Registrar", "This is Warden"]} head={["Prof. Manish Gaur", "Registrar", "Warden"]} />
 
             <div className='flex justify-evenly'>
                 <div className="relative overflow-x-auto shadow-md sm:rounded-lg mt-[2vw] w-[96vw]">

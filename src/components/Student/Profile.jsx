@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom';
+import { url } from '../utils/constant';
 
 function Profile() {
   const accessToken = localStorage.getItem('accessToken');
@@ -24,7 +25,7 @@ function Profile() {
 
   const getInfo = async (student) => {
     try {
-      const response = await axios.get(`http://localhost:8000/api/v1/regis/getStudent/${student}`, {
+      const response = await axios.get(`${url}/regis/getStudent/${student}`, {
         headers: {
           'Authorization': `Bearer ${accessToken}`,
           'Content-Type': 'application/json'
@@ -46,7 +47,7 @@ function Profile() {
 
   const getHostelInfo = async (student) => {
     try {
-      const response = await axios.get(`http://localhost:8000/api/v1/hostel/getHostelInformation/${student}`, {
+      const response = await axios.get(`${url}/hostel/getHostelInformation/${student}`, {
         headers: {
           'Authorization': `Bearer ${accessToken}`,
           'Content-Type': 'application/json'
@@ -67,7 +68,7 @@ function Profile() {
 
   const getRegistrationInfo = async (student) => {
     try {
-      const response = await axios.get(`http://localhost:8000/api/v1/registration/getRegistrationForm/${student}`, {
+      const response = await axios.get(`${url}/registration/getRegistrationForm/${student}`, {
         headers: {
           'Authorization': `Bearer ${accessToken}`,
           'Content-Type': 'application/json'
@@ -76,7 +77,7 @@ function Profile() {
       if (response.status === 200) {
         const data = response.data.data;
         // console.log(data);
-        setHostel(data.hsotelStatus);
+        setHostel(data.hostelStatus);
         setCourse(data.courseStatus);
       }
     } catch (error) {

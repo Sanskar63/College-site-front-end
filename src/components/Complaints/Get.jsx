@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Card from '../utils/Card';
 import { useNavigate } from 'react-router-dom';
+import { url } from '../utils/constant';
 
 function GetMyComplaints() {
     const navigate = useNavigate();
@@ -15,7 +16,7 @@ function GetMyComplaints() {
         const fetchData = async () => {
             try {
                 const response = await axios.get(
-                    'http://localhost:8000/api/v1/complaint/getMyComplaints',
+                    `${url}/complaint/getMyComplaints`,
                     {
                         headers: {
                             'Authorization': `Bearer ${accessToken}`

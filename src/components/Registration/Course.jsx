@@ -1,29 +1,55 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import { url } from '../utils/constant';
 
 function Course() {
   const [semester, setSemester] = useState('');
   const [password, setPassword] = useState('');
   const [courseFile, setFile] = useState(null);
+  const [loading, setLoading] = useState(false);
   const accessToken = localStorage.getItem('accessToken');
-  
+  const id = localStorage.getItem('studentId')
+
   const navigate = useNavigate();
 
-    
+  const isPresent = async (e) =>{
+    e.preventDefault();
+    try {
+      const response = await axios.get(`${url}/registration/getRegistrationForm/${id}`,
+      {
+        headers: {
+          'Authorization': `Bearer ${accessToken}`,
+          'Content-Type': 'application/json'
+        }
+      });
+      // console.log(response)
+      
+      if(!response.data.data.courseStatus){
+        handleSubmit();
+      }
+      else{
+        alert("Registration is already confirmed");
+        navigate("/registration");
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  }
 
   const handleSubmit = async (e) => {
-    e.preventDefault();
-  
+    // e.preventDefault();
+    setLoading(true); // Set loading state to true when the form is submitted
+
     // Create FormData object
     const formData = new FormData();
     formData.append('currentSem', semester);
     formData.append('password', password);
     formData.append('courseFile', courseFile);
-  
+
     try {
       const response = await axios.post(
-        "http://localhost:8000/api/v1/registration/course-registration",
+        `${url}/registration/course-registration`,
         formData, // Use FormData object as request data
         {
           headers: {
@@ -32,30 +58,27 @@ function Course() {
           }
         }
       );
-  
+
       console.log(response);
-      if(response.status===200){
+      if (response.status === 200) {
+        setLoading(false);
+        alert(response.data.message)
         navigate("/registration");
         localStorage.setItem("course", response.status);
       }
     } catch (error) {
-      console.log("error ------------>", error)
+      console.log("error ------------>", error);
+      setLoading(false); // Reset loading state if there is an error
     }
   };
-  
 
   return (
     <div className="max-w-md mx-auto my-10">
-
-      <form onSubmit={handleSubmit} className="shadow-md rounded px-8 pt-6 pb-8 mb-4 bg-slate-100">
-
-
+      <form onSubmit={isPresent} className="shadow-md rounded px-8 pt-6 pb-8 mb-4 bg-slate-100">
         <div className="mb-4">
-
           <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="semester">
             Select Semester
           </label>
-
           <select
             className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
             id="semester"
@@ -66,34 +89,24 @@ function Course() {
             <option value="1">I</option>
             <option value="2">II</option>
             <option value="3">III</option>
-            <option value="3">IV</option>
-            <option value="3">V</option>
-            <option value="3">VI</option>
-            <option value="3">VII</option>
-            <option value="3">VIII</option>
-            {/* Add more options for Semesters 4 through 8 */}
+            <option value="4">IV</option>
+            <option value="5">V</option>
+            <option value="6">VI</option>
+            <option value="7">VII</option>
+            <option value="8">VIII</option>
           </select>
-
         </div>
-
-
         <div className="mb-6">
-
           <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="file">
             Submit Your Course Proof
           </label>
-
           <input
             className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
             id="file"
             type="file"
-            onChange={(e) => {setFile(e.target.files[0]), console.log(e.target.files[0])}}
-            
+            onChange={(e) => setFile(e.target.files[0])}
           />
-
         </div>
-
-
         <div className="mb-4">
           <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="password">
             Password
@@ -107,21 +120,16 @@ function Course() {
             placeholder="Enter your password"
           />
         </div>
-
-
         <div className="flex items-center justify-between">
-
           <button
             className="bg-blue-500 active:bg-black hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
             type="submit"
+            disabled={loading} // Disable the button when loading
           >
-            Submit
+            {loading ? "Submitting..." : "Submit"}
           </button>
-
         </div>
-
       </form>
-
     </div>
   );
 }

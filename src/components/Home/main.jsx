@@ -1,6 +1,6 @@
 import React from 'react'
 import TogetherWeGrow from './lines';
-import Carousal from './carousal';
+import Carousal from './Carousal';
 import EventsAndNews from './EventsAndNews';
 
 

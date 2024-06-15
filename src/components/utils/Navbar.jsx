@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom"
 import axios from "axios";
+import Toggle from "./hamburge/ham";
 
 export const Navbar = (prop) => {
     const student = localStorage.getItem('studentId');
@@ -8,6 +9,7 @@ export const Navbar = (prop) => {
     const [imageUrl, setImageUrl] = useState("");
 
     const getInfo = async (student) => {
+        console.log("=============Running============")
         try {
             const response = await axios.get(`http://localhost:8000/api/v1/regis/getStudent/${student}`, {
                 headers: {
@@ -25,12 +27,14 @@ export const Navbar = (prop) => {
         }
     }
 
-    getInfo(student);
+    if(student){
+        getInfo(student);
+    }
 
     return (
         <>
 
-            <nav className="bg-white w-[100%] h-[18.5vw] sm:h-[14vw] relative overflow-hidden border-b-2 border-rgba-dark-brown " >
+            <nav className="bg-white w-[100%] h-[18.5vw] sm:h-[14vw] relative sm:overflow-hidden border-b-2 border-rgba-dark-brown " >
                 {/* it is cut svg will be block upto sm and then hidden */}
                 <img src="/temp/head.svg" alt="" className="w-[100%] absolute hidden sm:block -top-[2vw] -z-1" />
                 <img src="/temp/1logo-una.png" alt="" className="w-[48%] mt-[2.5vw] ml-[2%] hidden sm:block" />
@@ -43,7 +47,9 @@ export const Navbar = (prop) => {
                         </div>
                     </div>
 
-                    <div className="bg-gray-300 absolute top-[2vw] left-[1vw] w-[5%] h-[30%]" ></div>
+                    <div className="absolute top-0 right-0" >
+                        <Toggle />
+                    </div>
                 </div>
 
                 <ul className="hidden sm:absolute top-0 right-0 w-[45vw] sm:w-[50vw] h-[4vw] sm:flex flex-row justify-evenly items-center sm:mt-[2.3vw] overflow-visible">
@@ -62,8 +68,6 @@ export const Navbar = (prop) => {
                     <Link to="/applications" className="text-xs lg:text-base md:text-sm cursor-pointer text-rgba-brown font-semibold font-sans hover:text-rgba-dark-brown active:text-rgba-cream">Application</Link>
                     <div className="border-l border-gray-900 h-auto "></div>
                     <Link to="/complaints" className="text-xs lg:text-base md:text-sm cursor-pointer text-rgba-brown font-semibold font-sans hover:text-rgba-dark-brown active:text-rgba-cream">Complaints</Link>
-                    {/* <div className="border-l border-gray-900 h-auto"></div>
-                    <li className="text-xs lg:text-base md:text-sm cursor-pointer text-rgba-brown font-semibold font-sans">Profile</li> */}
                 </ul>
             </nav>
 

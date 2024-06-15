@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom';
+import { url } from '../utils/constant';
 
 function WriteComplaint() {
     const navigate = useNavigate();
@@ -20,7 +21,7 @@ function WriteComplaint() {
         const fetchData = async () => {
             try {
                 const response = await axios.post(
-                    'http://localhost:8000/api/v1/complaint/write',
+                    `${url}/complaint/write`,
                     {
                         content: content,
                         password: password,

@@ -2,6 +2,7 @@ import React from 'react'
 import axios from 'axios';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { url } from '../utils/constant';
 
 function Hostel() {
 
@@ -9,11 +10,36 @@ function Hostel() {
   const [file, setFile] = useState(null);
   const [loading, setLoading] = useState(false);
   const accessToken = localStorage.getItem('accessToken');
+  const id = localStorage.getItem('studentId');
 
   const navigate = useNavigate();
 
-  const handleSubmit = async (e) => {
+  const isPresent = async (e) =>{
     e.preventDefault();
+    try {
+      const response = await axios.get(`${url}/registration/getRegistrationForm/${id}`,
+      {
+        headers: {
+          'Authorization': `Bearer ${accessToken}`,
+          'Content-Type': 'application/json'
+        }
+      });
+      // console.log(response)
+      
+      if(!response.data.data.hostelStatus){
+        handleSubmit();
+      }
+      else{
+        alert("Registration is already confirmed");
+        navigate("/registration");
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
+  const handleSubmit = async (e) => {
+    // e.preventDefault();
     setLoading(true);
     // Handle form submission logic here
     const formData = new FormData();
@@ -21,7 +47,7 @@ function Hostel() {
     formData.append('hostelFile', file);
 
     try {
-      const response = await axios.post("http://localhost:8000/api/v1/registration/hostel-registration",
+      const response = await axios.post(`${url}/registration/hostel-registration`,
         formData,
         {
           headers: {
@@ -33,6 +59,7 @@ function Hostel() {
 
       console.log(response);
       if (response.status === 200) {
+        alert("Submitted")
         navigate("/registration");
         localStorage.setItem("course", response.status);
       }
@@ -50,7 +77,7 @@ function Hostel() {
   return (
     <div className="max-w-md mx-auto my-10">
 
-      <form onSubmit={handleSubmit} className="shadow-md rounded px-8 pt-6 pb-8 mb-4 bg-slate-100">
+      <form onSubmit={isPresent} className="shadow-md rounded px-8 pt-6 pb-8 mb-4 bg-slate-100">
 
         <div className="mb-6">
           <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="file">
