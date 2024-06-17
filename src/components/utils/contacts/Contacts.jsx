@@ -38,9 +38,9 @@ const Contacts = () => {
             {/* <Cards img={"Director-iiitu.png"} email="director@iiitu.ac.in" ph="975257901"  /> */}
 
             <div className='w-[100%] mt-[2vw] flex flex-col items-center' >
-                <div className='bg-rgba-dark-brown h-[34vw] sm:h-[21vw] w-[96vw] rounded-lg pt-[1vw] flex justify-center'>
+                <div className='bg-rgba-dark-brown h-[34vh] sm:h-[21vw] w-[96vw] rounded-lg pt-[1vw] flex justify-center'>
 
-                    <div className='w-[94vw] h-[29vw] sm:h-[17vw] flex items-center rounded-lg bg-rgba-cream'>
+                    <div className='w-[94vw] h-[30vh] sm:h-[17vw] flex items-center rounded-lg bg-rgba-cream'>
 
                         <div className='w-[20vw] h-[20vw] sm:w-[13.5vw] sm:h-[13.5vw] flex items-center justify-center bg-rgba-dark-brown rounded-full ml-[1vw]'>
                             <img src='/temp/Director-iiitu.png' alt="" className='w-[18vw] h-[18vw] sm:w-[12vw] sm:h-[12vw] border-2 border-white rounded-full bg-rgba-brown' />
