@@ -43,7 +43,7 @@ const Contacts = () => {
                     <div className='w-[94vw] h-[29vw] sm:h-[17vw] flex items-center rounded-lg bg-rgba-cream'>
 
                         <div className='w-[20vw] h-[20vw] sm:w-[13.5vw] sm:h-[13.5vw] flex items-center justify-center bg-rgba-dark-brown rounded-full ml-[1vw]'>
-                            <img src='public/temp/Director-iiitu.png' alt="" className='w-[18vw] h-[18vw] sm:w-[12vw] sm:h-[12vw] border-2 border-white rounded-full bg-rgba-brown' />
+                            <img src='/temp/Director-iiitu.png' alt="" className='w-[18vw] h-[18vw] sm:w-[12vw] sm:h-[12vw] border-2 border-white rounded-full bg-rgba-brown' />
                         </div>
 
                         <div className='pl-[5%] h-[75%] sm:h-[95%] w-[75%] relative'>

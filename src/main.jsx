@@ -21,6 +21,7 @@ import Home from './components/Home/main.jsx'
 import AllEvents from './components/NewsAndEvents/AllEvents.jsx'
 import AllNews from './components/NewsAndEvents/AllNews.jsx'
 
+
 const router = createBrowserRouter([
   {
     path: "/",
