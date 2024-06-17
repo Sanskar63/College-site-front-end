@@ -60,7 +60,7 @@ function GetMy() {
                             dateTime={item.createdAt}
                         />
                     ))}
-                </div>) : (<h1 className="text-center text-4xl my-16 font-bold">No Applications</h1>)}
+                </div>) : (<h1 className="text-center text-2xl md:text-4xl my-16 font-bold">No Applications</h1>)}
             </div>
 
         </>

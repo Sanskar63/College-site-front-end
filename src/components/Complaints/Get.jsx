@@ -63,7 +63,7 @@ function GetMyComplaints() {
                     ))}
                 </div>
             ) : (
-                <h1 className="text-center text-4xl my-16 font-bold">No Complaints</h1>
+                <h1 className="text-center text-2xl md:text-4xl my-16 font-bold">No Complaints</h1>
             )}
             </div>
 

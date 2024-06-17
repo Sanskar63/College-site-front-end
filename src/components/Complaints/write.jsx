@@ -52,7 +52,7 @@ function WriteComplaint() {
     }
 
     return (
-        <div className='w-[100%] h-[50vw] flex justify-center items-center bg-gray-200'>
+        <div className='w-[100%] h-[70vh] flex justify-center items-center bg-gray-200'>
 
             <div className=" min-w-md lg:w-[30%] mx-auto p-5 bg-white shadow-lg rounded-lg">
                 <form className="space-y-4" onSubmit={handleApplication}>
