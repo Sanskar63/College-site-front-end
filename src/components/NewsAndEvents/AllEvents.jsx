@@ -9,6 +9,7 @@ function AllEvents() {
 
     const [events, setEvents] = useState([]);
     useEffect(() => {
+        window.scrollTo(0,0);
         const fetchEvents = async () => {
             try {
                 const response = await axios.get(`${url}/events/getAll`);

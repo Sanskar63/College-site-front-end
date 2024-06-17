@@ -8,6 +8,7 @@ function AllNews() {
     const [news, setNews] = useState([]);
     const [loading, setLoading]= useState(true);
     useEffect(() => {
+        window.scrollTo(0,0);
         const fetchNews = async () => {
             try {
                 const response = await axios.get(`${url}/news/getAll`);
