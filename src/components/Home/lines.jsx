@@ -13,8 +13,7 @@ const TogetherWeGrow = () => {
         Together, we cultivate a culture of excellence, where students are empowered to explore their passions, challenge conventions, and drive positive change. Our diverse and inclusive community is dedicated to nurturing talent, promoting research, and creating impactful solutions to real-world problems.
         <br /><br />
         Join us at IIIT Una, where each member of our community contributes to our shared vision of growth and success. Here, your journey is supported by cutting-edge resources, mentorship, and a network of like-minded individuals committed to making a difference.
-        <br /><br />
-        Together, we grow – in knowledge, in spirit, and in purpose.
+        <br />
       </p>
     </div>
   );

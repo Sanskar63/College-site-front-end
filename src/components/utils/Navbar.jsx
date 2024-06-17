@@ -2,8 +2,9 @@ import { useState } from "react";
 import { Link } from "react-router-dom"
 import axios from "axios";
 import Toggle from "./hamburge/ham";
+import {url} from "../utils/constant.jsx"
 
-export const Navbar = (prop) => {
+export const Navbar = () => {
     const student = localStorage.getItem('studentId');
     const accessToken = localStorage.getItem('accessToken');
     const [imageUrl, setImageUrl] = useState("");
@@ -54,8 +55,11 @@ export const Navbar = (prop) => {
 
                 <ul className="hidden sm:absolute top-0 right-0 w-[45vw] sm:w-[50vw] h-[4vw] sm:flex flex-row justify-evenly items-center sm:mt-[2.3vw] overflow-visible">
                     <Link to="/" className="text-black sm:text-white text-xs lg:text-2xl md:text-base cursor-pointer hover:text-rgba-dark-brown font-sans active:text-rgba-cream">Home</Link>
+
                     <Link to="/announcement" className="text-black sm:text-white text-xs lg:text-2xl md:text-base cursor-pointer hover:text-rgba-dark-brown active:text-rgba-cream font-sans">Announcements</Link>
+
                     <Link to="/contacts" className="text-black sm:text-white text-xs lg:text-2xl md:text-base cursor-pointer hover:text-rgba-dark-brown active:text-rgba-cream font-sans">Contacts</Link>
+
                     <Link to="/registration" className="text-black sm:text-white text-xs lg:text-2xl md:text-base cursor-pointer hover:text-rgba-dark-brown active:text-rgba-cream font-sans">Register</Link>
 
                     <Link to="/profile">

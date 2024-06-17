@@ -47,7 +47,7 @@ function GetMyComplaints() {
 
             <div className="relative flex justify-center items-center h-auto bg-gray-200">
 
-                <button type="button" onClick={() => (navigate("/writeComplaints"))} className="w-[10%] absolute top-4 right-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
+                <button type="button" onClick={() => (navigate("/writeComplaints"))} className="lg:w-[10%] absolute top-4 right-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
                     Complain
                 </button>
                 {complaints.length > 0 ? (

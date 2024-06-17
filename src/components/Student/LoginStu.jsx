@@ -25,7 +25,7 @@ function LoginStu() {
 
     const callBackend = async (email, password) => {
         try {
-            const response = await axios.post(`${url}/v1/regis/login`, {
+            const response = await axios.post(`${url}/regis/login`, {
                 email: email,
                 password: password
             })

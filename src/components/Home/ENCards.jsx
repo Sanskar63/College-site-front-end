@@ -6,18 +6,18 @@ const ENCards = ({ img, heading, content, date, link }) => {
 
   const d = createdAtDate.toDateString(); // "Thu Apr 21 2024"
   return (
-    <div className="max-w-sm h-[35vw] rounded border shadow-lg m-[1%] bg-white relative ">
+    <div className="max-w-sm h-[65vh] rounded border shadow-lg m-[1%] bg-white relative ">
       <div className="flex justify-between items-center h-[5%]">
         <span className="text-gray-700 text-base absolute top-1 sm:top-0 right-[2%]">{d}</span>
       </div>
-      {img?<img className="h-[45%] w-[100%] mt-8 sm:mt-0" src={img} alt="News" />: ""}
+      {img ? <img className="h-[45%] w-[100%] mt-[2%] sm:mt-0" src={img} alt="News" /> : ""}
       <div className="px-6 py-4 overflow-y-scroll scrollbar-none hover:scrollbar-thin h-[49%]">
         <div className="font-bold text-xl mb-2">{heading}</div>
         <p className="text-gray-700 text-base">
           {content}
         </p>
       </div>
-      
+
     </div>
   );
 };

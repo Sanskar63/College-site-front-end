@@ -42,13 +42,15 @@ function EventsAndNews() {
 
         <div >
             <div className="container mx-auto my-8 ">
-                <h1 className="sm:text-xl scroll lg:text-3xl font-bold ">Latest News</h1>
-                <div className="w-[15%] sm:w-[10%] h-1 sm:h-1.5 bg-black rounded-full mb-[2%]"></div>
+                <h1 className="ml-5 sm:text-xl scroll lg:text-3xl font-bold ">Latest News</h1>
+                <div className="ml-5 w-[15%] sm:w-[10%] h-1 sm:h-1.5 bg-black rounded-full mb-[2%]"></div>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                <div className="flex justify-center lg:justify-normal items-center flex-wrap">
+            
                     {news.slice(0, 3).map((item) => (
                         <ENCards key={item.id} {...item} />
                     ))}
+
                 </div>
                 <div className="mt-8 text-center">
                     <Link to="/all-news" className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
@@ -58,13 +60,13 @@ function EventsAndNews() {
             </div>
 
             <div className="container mx-auto my-8">
-                <h1 className="sm:text-xl scroll lg:text-3xl font-bold">Latest Events</h1>
-                <div className="w-[10%] h-1.5 bg-black rounded-full mb-[2%]"></div>
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                <h1 className="ml-5 sm:text-xl scroll lg:text-3xl font-bold">Latest Events</h1>
+                <div className="ml-5 w-[15%] sm:w-[10%] h-1 sm:h-1.5 bg-black rounded-full mb-[2%]"></div>
+                <div className="flex justify-center lg:justify-normal items-center flex-wrap">
                     {events.slice(0, 3).map((item) => (
                         <ENCards key={item.id} {...item} />
                     ))}
-                </div>
+                    </div>
                 <div className="mt-8 text-center">
                     <Link to="/all-events" className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
                         Get All Events

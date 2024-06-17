@@ -47,7 +47,7 @@ function GetMy() {
 
             <div className="relative flex justify-center items-center h-auto bg-gray-200">
 
-                <button type="button" onClick={() => (navigate("/writeApplication"))} className="w-[10%] absolute top-4 right-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
+                <button type="button" onClick={() => (navigate("/writeApplication"))} className="lg:w-[10%] absolute top-4 right-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
                     Write
                 </button>
                 {myApplications.length > 0 ?(<div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 my-[3vw] mx-[2vw]">

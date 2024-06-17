@@ -4,7 +4,7 @@ import './App.css'
 import About from './components/utils/Announcement'
 import Cards from './components/utils/Cards'
 import Footer from './components/utils/Footer'
-import Contacts from './components/utils/Contacts'
+import Contacts from './components/utils/contacts/Contacts'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -12,7 +12,7 @@ function App() {
   return (
     <>
       {/* <About  />  */}
-      <Contacts />
+      {/* <Contacts /> */}
     </>
   )
 }
