@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Cards from './Cards'
 import TeachCard from './card'
 
@@ -32,6 +32,9 @@ const Contacts = () => {
         }
     ]
 
+    useEffect(()=>{
+        window.scrollTo(0, 0);
+    },[]);
     return (
         <div className='my-2'>
 

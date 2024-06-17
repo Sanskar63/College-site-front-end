@@ -10,6 +10,7 @@ function Announcement() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
+    window.scrollTo(0,0);
     const fetchAnnoucements = async () => {
       try {
         const response = await axios.get(`${url}/annoucements/get`);
