@@ -1,15 +1,18 @@
 import axios from 'axios';
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 import { url } from '../utils/constant';
 
 function Profile() {
   const accessToken = localStorage.getItem('accessToken');
-  const navigate = useNavigate();
-  if(!accessToken){
-    navigate('/login');
-  }
   const student = localStorage.getItem('studentId');
+  const navigate = useNavigate();
+  useEffect(()=>{
+    if(!student){
+      navigate('/login');
+    }
+  }, [])
+  
   // console.log('--------->',student)
   const [name, setName] = useState('');
   const [rollNum, setRollNum] = useState('');

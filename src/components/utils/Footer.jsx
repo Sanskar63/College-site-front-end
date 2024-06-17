@@ -22,6 +22,7 @@ function Footer() {
           <span className='font-bold text-xl lg:text-[2vw] mb-[1vw] text-white'>Quick Links</span>
           <Link to="/" className='text-white'>Home</Link>
           <Link to="/contacts" className='text-white'>Contacts</Link>
+          <Link to="/announcement" className='text-white'>Announcements</Link>
           {student? (<Link to="/logout" className='text-white'>Logout</Link>): (<Link className='text-white' to="/login">Login</Link>)}
         </div>
 {/* 

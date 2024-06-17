@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import Cookies from 'js-cookie';
 import { url } from '../utils/constant';
 
@@ -52,11 +52,11 @@ function LoginStu() {
 
 
     return (
-        <div>
+        <div className="bg-gray-300 h-[100vh] flex flex-col items-center">
 
-            <section className="bg-gray-300">
+            <section >
 
-                <div className="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
+                <div className="flex flex-col items-center justify-center px-6 py-8 mx-auto h-[85vh] lg:py-0">
 
                     <div className="flex flex-col justify-evenly items-center mb-6 text-[4vw] md:text-[3vw] lg:text-[2vw] font-semibold text-gray-950">
                         <img className="w-[6vw] mr-2" src="/temp/IIITLogo.png" alt="logo" />
@@ -91,6 +91,7 @@ function LoginStu() {
                 </div>
             </section>
 
+            <Link to="/" className='text-2xl font-semibold border border-black shadow-lg hover:scale-105 active:scale-100 duration-200 rounded-md px-2 py-1 bg-rgba-brown text-white'>Home</Link>
         </div>
     )
 }

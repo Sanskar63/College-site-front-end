@@ -49,7 +49,7 @@ function Announcement() {
 
   return (
     <div className='w-[100%] my-[2%]'>
-      <h1 className='text-4xl font-bold ml-[2%]'>This Week's Announcements</h1>
+      <h1 className='text-4xl font-bold ml-[2%] underline'>This Week's Announcements</h1>
       {loading ? (
         <div className='flex flex-col items-center justify-center'>
 
@@ -71,7 +71,7 @@ function Announcement() {
         ))
       )}
 
-      <h1 className='text-4xl font-bold ml-[2%]'> All Previous Announcements</h1>
+      <h1 className='text-4xl font-bold ml-[2%] mt-10 underline'> All Previous Announcements</h1>
       {loading ? (
         <div className='flex flex-col items-center justify-center'>
 

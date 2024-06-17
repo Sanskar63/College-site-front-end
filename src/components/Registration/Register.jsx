@@ -1,7 +1,15 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React, { useEffect } from 'react'
+import { Link, useNavigate } from 'react-router-dom'
 
 function Register() {
+  const student = localStorage.getItem('studentId');
+  const navigate = useNavigate();
+  useEffect(()=>{
+    if(!student){
+      navigate("/login");
+    }
+  },[]);
+  
   return (
     <div className='w-[100%] h-auto bg-slate-400 py-[10vw] flex justify-evenly px-[20vw]'>
 
