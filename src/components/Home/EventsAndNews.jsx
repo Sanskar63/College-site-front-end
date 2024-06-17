@@ -24,7 +24,7 @@ function EventsAndNews() {
 
         const fetchEvents = async () => {
             try {
-                const response = await axios.get('http://localhost:8000/api/v1/events/getAll');
+                const response = await axios.get(`${url}/events/getAll`);
                 const sortedEvents = response.data.data.sort((a, b) => new Date(b.date) - new Date(a.date));
                 setEvents(sortedEvents);
             } catch (error) {
