@@ -1,12 +1,12 @@
 // src/ENCards.js
 import React from 'react';
 
-const ENCards = ({ img, heading, content, date, link }) => {
+const ENCards = ({ key, img, heading, content, date, link }) => {
   const createdAtDate = new Date(date);
 
   const d = createdAtDate.toDateString(); // "Thu Apr 21 2024"
   return (
-    <div className="max-w-sm h-[65vh] rounded border shadow-lg m-[1%] bg-white relative ">
+    <div key={key} className="max-w-sm h-[65vh] rounded border shadow-lg m-[1%] bg-white relative ">
       <div className="flex justify-between items-center h-[5%]">
         <span className="text-gray-700 text-base absolute top-1 sm:top-0 right-[2%]">{d}</span>
       </div>

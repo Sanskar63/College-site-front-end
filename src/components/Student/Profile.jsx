@@ -2,6 +2,8 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 import { url } from '../utils/constant';
+import {jwtDecode} from 'jwt-decode'
+import toast from 'react-hot-toast';
 
 function Profile() {
   const accessToken = localStorage.getItem('accessToken');
@@ -11,7 +13,23 @@ function Profile() {
     if(!student){
       navigate('/login');
     }
-  }, [])
+
+    if (accessToken) {
+      const decodedToken = jwtDecode(accessToken);
+      const currentTime = Date.now() / 1000; // Current time in seconds
+  
+      // Check if the token is expired
+      if (decodedToken.exp < currentTime) {
+        // Token is expired
+        localStorage.removeItem('accessToken'); // Optionally clear the token
+        navigate('/login'); // Redirect to login
+      }
+    } else {
+      // No access token found
+      navigate('/login');
+    }
+  }, [student, accessToken, navigate]);
+  
   
   // console.log('--------->',student)
   const [name, setName] = useState('');
@@ -44,7 +62,9 @@ function Profile() {
         setCurrentSem(data.currentSem)
       }
     } catch (error) {
-      console.log('======>>>', error)
+      // console.log('======>>>', error)
+      // toast.error('Some Error In Fetching Data')
+      navigate('/login')
     }
   }
 
