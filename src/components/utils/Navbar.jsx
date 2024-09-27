@@ -25,7 +25,7 @@ export const Navbar = () => {
             }
         } catch (error) {
             // console.log('======>>>', error);
-            setImageUrl('../../public/temp/pp.jpg');
+            setImageUrl('/public/temp/pp.jpg');
         }
     }
 
