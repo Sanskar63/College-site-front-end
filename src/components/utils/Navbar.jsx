@@ -103,7 +103,7 @@ export const Navbar = () => {
             </nav>
 
             {showNav && (
-                <div className='w-[100%] hidden sm:flex pl-5 md:pr-5 fixed top-0 left-0 z-50 gap-2'>
+                <div className='w-[100%] hidden sm:flex pl-5 md:pr-5 fixed top-0 left-0 z-50 gap-2 animate-fall'>
                     <div className="w-[100%] h-[4vw] bg-white shadow-md fixed top-0 left-0"/>
                     <img className='w-[8%] lg:w-[7%] bg-white shadow-md rounded-full p-1 z-50' src="/temp/IIITLogo.png" alt="" />
                     {/* <span className="text-black z-50 font-bold text-xs lg:text-xl">Indian Institute of Information Technology Una</span> */}
