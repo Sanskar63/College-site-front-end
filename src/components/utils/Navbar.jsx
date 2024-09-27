@@ -8,7 +8,7 @@ import { jwtDecode } from "jwt-decode";
 export const Navbar = () => {
     const student = localStorage.getItem('studentId');
     const accessToken = localStorage.getItem('accessToken');
-    const [imageUrl, setImageUrl] = useState('../../public/temp/pp.jpg');
+    const [imageUrl, setImageUrl] = useState('/temp/pp.jpg');
 
     const getInfo = async (student) => {
         try {
